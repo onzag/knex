@@ -795,6 +795,11 @@ export declare namespace Knex {
 
     update<TResult2 = number>(columnName: string, value: Value): QueryBuilder<TRecord, TResult2>;
 
+    updateFrom(
+      tableName: string,
+      alias: string,
+    ): QueryBuilder<TRecord, TResult2>;
+
     returning(column: '*', options?: DMLOptions): QueryBuilder<TRecord, DeferredKeySelection<TRecord, never>[]>;
     returning<
       TKey extends StrKey<ResolveTableType<TRecord>>,
